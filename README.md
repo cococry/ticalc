@@ -46,13 +46,20 @@ access or just run the binary via terminal:
 ticalc
 ```
 
-
 ## Build Dependencies
 
 | Dependency         |  Reason of Usage    |
 | ----------------|-------------|
 | [leif](https://github.com/cococry/leif) | Creating the entire UI Frontend |
+| [libm](https://en.wikipedia.org/wiki/C_mathematical_functions#libm) | Mathematical functions |
+| [llibclipboard](https://github.com/jtanx/libclipboard) | Handling clipboard |
+| [libGL](https://dri.freedesktop.org/wiki/libGL/) | OpenGL Functionality |
 | [GLFW](https://github.com/glfw/glfw) | Handling windowing, input etc. |
+| [glad](https://github.com/Dav1dde/glad) | Loading OpenGL functions |
+| [stb_image](https://github.com/nothings/stb/blob/master/stb_image.h) | Loading image files into memory |
+| [stb_image_resize2](https://github.com/nothings/stb/blob/master/stb_image_resize2.h) | Resizing images |
+| [stb_truetype](https://github.com/nothings/stb/blob/master/stb_truetype.h) | Loading font glyphs from font files |
+| [cglm](https://github.com/recp/cglm) | Linear Algebra Math |
 
 ## Lines of Code
 
