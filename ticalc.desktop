@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+TryExec=ticalc
+Exec=ticalc
+Icon=/usr/share/icons/ticalc/512x512/appicon.png
+Terminal=false
+Categories=Utility;Math;Science;Education;Calculator;Office;
+
+Name=Ticalc
+GenericName=Calculator
+Comment=A small, aesthetic hardware accelerated UI calculator

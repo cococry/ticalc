@@ -14,3 +14,6 @@ clean:
 
 install:
 	cp ${BIN_NAME} /usr/bin/
+	cp ./ticalc.desktop /usr/share/applications
+	cp -r ./logo /usr/share/icons/ticalc
+
