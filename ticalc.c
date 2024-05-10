@@ -376,6 +376,7 @@ void histdown() {
 }
 
 void clipboardresult() {
+  if(s.histsize < 1) return;
   char buf[EXPR_BUF_SIZE];
   sprintf(buf, RESULT_PRECISION, s.results[s.histsize - 1]);
   lf_set_clipboard_text(buf);

@@ -15,7 +15,7 @@
 
 // Buffers
 #define EXPR_BUF_SIZE 64
-#define HIST_MAX 100 
+#define HIST_MAX 512 
 
 // Font declarationpercisio
 #define FONT "RobotoMono-Bold"
