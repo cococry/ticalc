@@ -24,7 +24,7 @@ As a sidenote, the entire application can be used by only using keyboard shortcu
 
 On arch:
 ```console
-paru -S make gcc cglm libclipboard glfw
+paru -S make gcc cglm libclipboard glfw ttf-roboto-mono
 ```
 
 On debian:
@@ -33,7 +33,7 @@ On debian:
 Note: You will have to build libclipboard yourself.
 Follow the instructions [here](https://github.com/jtanx/libclipboard?tab=readme-ov-file#building).
 ```console
-sudo apt-get install make gcc libglfw3 libglfw3-dev libcglm-dev
+sudo apt-get install make gcc libglfw3 libglfw3-dev libcglm-dev fonts-roboto
 ```
 
 - Clone the repository
