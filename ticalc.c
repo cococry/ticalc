@@ -328,16 +328,17 @@ void evalinput() {
     sprintf(expr, "%s%s", format, s.input.buf);
     result = evalexpr(expr);
   }
+  if(s.histsize + 1 <= HIST_MAX)
   {
     char *buf = s.inputbuf; 
     char *histentry; 
     histentry = (char *)malloc(strlen(buf) + 1); 
     strcpy(histentry, buf);
     s.hist[s.histsize] = histentry;
+    s.results[s.histsize] = result;
+    s.histsize++;
+    s.histidx = s.histsize;
   }
-  s.results[s.histsize] = result;
-  s.histsize++;
-  s.histidx = s.histsize;
 
   clearinput();
 
