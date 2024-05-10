@@ -19,6 +19,23 @@ As a sidenote, the entire application can be used by only using keyboard shortcu
 
 ## Installation
 
+- Install the dependencies
+
+
+On arch:
+```console
+paru -S make gcc cglm libclipboard glfw
+```
+
+On debian:
+
+
+Note: You will have to build libclipboard yourself.
+Follow the instructions [here](https://github.com/jtanx/libclipboard?tab=readme-ov-file#building).
+```console
+sudo apt-get install make gcc libglfw3 libglfw3-dev libcglm-dev
+```
+
 - Clone the repository
 ```console
 git clone https://github.com/cococry/ticalc
