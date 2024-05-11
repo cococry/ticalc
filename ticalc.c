@@ -189,8 +189,8 @@ void drwbuttons() {
   const float nx = 4;
   const float ny = 5;
   const float padding  = BTN_PADDING; 
-  const float availw = s.winw - (padding * (2 + (nx - 1)));
-  const float availh = (s.winh - PANEL_H) - (padding * (2 + (ny - 1)));
+  const float availw = s.winw - (padding * (nx + 1));
+  const float availh = (s.winh - PANEL_H) - (padding * (nx + 1));
   const float w = availw / nx;
   const float h = availh / ny;
   const float htotal = h * ny + (padding * (ny - 1)) + padding;
@@ -317,6 +317,7 @@ void clearentries() {
   s.panelscroll = 0.0f;
 }
 void evalinput() {
+  if(!strlen(s.inputbuf)) return;
   double result;
   {
     uint32_t first;
