@@ -83,7 +83,7 @@ void initwin() {
   lf_init_glfw(s.winw, s.winh, s.win);
 
   LfTheme theme = lf_get_theme();
-  theme.font = lf_load_font(FONT_DIR"/"FONT".ttf", 24);
+  theme.font = lf_load_font(FONT_DIR"/"FONT".ttf", 28);
   theme.scrollbar_props.color = lf_color_brightness(MAIN_COL, 4.0f);
   theme.scrollbar_props.corner_radius = 2.0f;
   lf_set_theme(theme);
