@@ -14,6 +14,7 @@ build:
 	${CC} -o ${BIN_NAME} ${SRC} ${CFLAGS} ${LIBS} 
 
 clean:
+		$(MAKE) -C ./vendor/leif/ clean
 		rm -f ${BIN_NAME}
 
 install:

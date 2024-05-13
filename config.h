@@ -1,9 +1,10 @@
 #pragma once
 
 // Theming  
-#define MAIN_COL (LfColor){15, 15, 15, 255}
-#define MAIN_TEXT_COL LF_WHITE 
-#define PANEL_COLOR lf_color_brightness(MAIN_COL, 1.3f)
+#define MAIN_COL (LfColor){182, 211, 224, 255}
+#define MAIN_TEXT_COL LF_BLACK 
+#define EXPR_TEXT_COL (LfColor){100, 100, 100, 255} 
+#define PANEL_COLOR lf_color_brightness(MAIN_COL, 1.5f)
 #define BTN_COLOR lf_color_brightness(MAIN_COL, 1.6f)
 #define BTN_PADDING 20.0f
 

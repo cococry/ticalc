@@ -71,15 +71,16 @@ void initwin() {
   s.winh = WIN_INIT_H;
   assert(glfwInit() && "Failed to initialize GLFW.");
 
-  GLFWwindow* win = glfwCreateWindow(s.winw, s.winh, "ticalc", NULL, NULL);
+  glfwWindowHint(GLFW_DECORATED, GLFW_FALSE);
+  s.win = glfwCreateWindow(s.winw, s.winh, "ticalc", NULL, NULL);
 
-  assert(win && "Failed to create GLFW window.");
+  assert(s.win && "Failed to create GLFW window.");
 
-  glfwMakeContextCurrent(win);
+  glfwMakeContextCurrent(s.win);
 
-  glfwSetFramebufferSizeCallback(win, resizecb);
+  glfwSetFramebufferSizeCallback(s.win, resizecb);
 
-  lf_init_glfw(s.winw, s.winh, win);
+  lf_init_glfw(s.winw, s.winh, s.win);
 
   LfTheme theme = lf_get_theme();
   theme.font = lf_load_font(FONT_DIR"/"FONT".ttf", 24);
@@ -94,13 +95,12 @@ void initwin() {
     .buf = s.inputbuf,
     .width = s.winw - 60.0f,
     .buf_size = EXPR_BUF_SIZE,
-    .advance_height = true,
     .max_chars = 30, 
     .placeholder = "",
     .selected = true,
     .insert_override_callback = inputinsertcb
   };
-  s.win = win;
+  s.win = s.win;
 }
 
 void terminate() {
@@ -139,7 +139,7 @@ void drwpanel() {
     LfUIElementProps props = lf_get_theme().text_props;
     // Expression
     {
-      props.text_color = lf_color_brightness(MAIN_TEXT_COL, 0.75f);
+      props.text_color = EXPR_TEXT_COL;
       props.margin_left = 10.0f;
       lf_push_style_props(props);
       lf_text(s.hist[i]);
@@ -190,10 +190,10 @@ void drwbuttons() {
   const float ny = 5;
   const float padding  = BTN_PADDING; 
   const float availw = s.winw - (padding * (nx + 1));
-  const float availh = (s.winh - PANEL_H) - (padding * (nx + 1));
+  const float availh = (s.winh - PANEL_H) - (padding * (nx + 2));
   const float w = availw / nx;
   const float h = availh / ny;
-  const float htotal = h * ny + (padding * (ny - 1)) + padding;
+  const float htotal = (s.winh - PANEL_H) - padding;
 
   float x = padding; 
   float y = s.winh - htotal;
